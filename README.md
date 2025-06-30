@@ -8,6 +8,7 @@ Desarrollar y comparar diferentes arquitecturas de segmentación semántica para
 
 ## Estructura del Repositorio
 
+```text
 semantic-building-segmentation/
 │
 ├── data-preprocessing/ # Scripts para preparar y transformar los datos (PNOA, INRIA)
@@ -24,7 +25,7 @@ semantic-building-segmentation/
 │ └── predictions/ # Ejemplos visuales
 │
 └── README.md
-
+```
 ## Modelos Evaluados
 
 - **UNet-ResNet34**
@@ -48,9 +49,11 @@ Los modelos fueron entrenados y evaluados en tres escenarios:
 
 Se analizaron métricas como IoU, F1-score y Accuracy, tanto en validación como en pruebas visuales sobre zonas reales de España. Puedes encontrar los resultados en:
 
+```text
 results/metrics/
 results/plots/
 results/predictions/
+```
 
 ## Requisitos
 
