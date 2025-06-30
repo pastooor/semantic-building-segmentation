@@ -835,21 +835,18 @@ history = []
 print("Añade Modelo: ", model_names[index])
 model = models[index]
 
-# ——— Si se pasó checkpoint, cargar pesos aquí ———
+#Si se pasó checkpoint, cargar pesos aquí
 if checkpoint_path:
     print(f"Cargando checkpoint desde {checkpoint_path} …")
-    # Carga con weights_only=False para modelos completos
     ck = torch.load(checkpoint_path, map_location=device, weights_only=False)
-    # Si lo guardaste con torch.save(model), ck será un nn.Module
     if isinstance(ck, torch.nn.Module):
         model = ck.to(device)
-        print("✔️  Modelo completo cargado desde checkpoint")
+        print("Modelo completo cargado desde checkpoint")
     else:
-        # Si ck es un dict, extraemos state_dict y opcionalmente optimizer
         sd = ck.get('state_dict', ck)
         model.load_state_dict(sd)
         model = model.to(device)
-        print("✔️  State_dict cargado en model")
+        print("State_dict cargado en model")
 
 
 # modelo rescatado
